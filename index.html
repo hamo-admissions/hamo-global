@@ -166,20 +166,22 @@ HaMo Global Admissions specializes in university admissions, travel and student 
 </section>
 
 <section id="apply" class="reveal">
-<h2>Application Form</h2>
-
-<form onsubmit="
-event.preventDefault();
-let msg=
-'New Application%0A'
-+'Name: '+this.name.value+'%0A'
-+'Phone: '+this.phone.value;
-window.open('https://wa.me/916359784774?text='+msg);
-">
-<input name="name" placeholder="Full Name" required>
-<input name="phone" placeholder="Phone Number">
-<button>Send via WhatsApp</button>
-</form>
+    <section id="apply" class="reveal">
+  <h2>Application Form</h2>
+  <form onsubmit="
+    event.preventDefault();
+    let msg =
+      'New Application%0A' +
+      'Name: ' + this.name.value + '%0A' +
+      'Phone: ' + this.phone.value + '%0A' +
+      'Email: ' + this.email.value;
+    window.open('https://wa.me/916359784774?text=' + encodeURIComponent(msg));
+  ">
+    <input name="name" placeholder="Full Name" required>
+    <input name="phone" placeholder="Phone Number">
+    <input name="email" placeholder="Your Email" required>
+    <button type='submit'>Send via WhatsApp</button>
+  </form>
 </section>
 
 <section id="management" class="reveal">
@@ -193,7 +195,7 @@ window.open('https://wa.me/916359784774?text='+msg);
 </div>
 
 <div class="manager">
-<h3>Homam Antar</h3>
+<h3>Homam Anntar</h3>
 <p>+91 8758050995</p>
 <a class="whatsapp-btn" href="https://wa.me/918758050995">WhatsApp</a>
 </div>
