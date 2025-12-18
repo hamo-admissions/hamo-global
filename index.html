@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>HaMo Global Admissions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',Tahoma;
+  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#8e2de2,#00c6ff);
+  background-size:500% 500%;
+  animation:bg 18s ease infinite;
+  color:#333;
+}
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+header{
+  text-align:center;
+  padding:80px 20px;
+  color:white;
+  background:rgba(0,0,0,0.55);
+}
+
+/* ===== شعار واضح ===== */
+.logo{
+  width:120px;
+  height:120px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00c6ff,#8e2de2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  font-weight:900;
+  color:white;
+  border:4px solid white;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+nav{
+  text-align:center;
+  padding:15px;
+  background:rgba(0,0,0,0.65);
+}
+nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{color:#00c6ff}
+
+section{
+  max-width:1200px;
+  margin:60px auto;
+  background:rgba(255,255,255,0.96);
+  border-radius:22px;
+  padding:70px 8%;
+}
+
+.cards,.managers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card,.manager{
+  background:white;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  overflow:hidden;
+}
+.card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+.card-content,.manager{padding:25px}
+
+.whatsapp-btn{
+  display:inline-block;
+  margin-top:12px;
+  background:#25D366;
+  color:white;
+  padding:10px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all 0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+footer{
+  text-align:center;
+  color:white;
+  padding:25px;
+  background:rgba(0,0,0,0.65);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">HaMo</div>
+  <h1>HaMo Global Admissions</h1>
+  <p>Study & Travel in India | القبولات والسفر إلى الهند</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#apply">Apply</a>
+  <a href="#management">Management</a>
+</nav>
+
+<section id="about" class="reveal">
+<h2>About Us | من نحن</h2>
+<p>
+HaMo Global Admissions specializes in university admissions, travel and student services in India.  
+نحن شركة متخصصة في القبولات الجامعية والسفر مع متابعة شاملة.
+</p>
+</section>
+
+<section id="services" class="reveal">
+<h2>Our Services</h2>
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+<div class="card-content">
+<h3>University Admissions</h3>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+<div class="card-content">
+<h3>Travel & Tourism</h3>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
+<div class="card-content">
+<h3>Visas</h3>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="apply" class="reveal">
+<h2>Application Form</h2>
+
+<form onsubmit="
+event.preventDefault();
+let msg=
+'New Application%0A'
++'Name: '+this.name.value+'%0A'
++'Phone: '+this.phone.value;
+window.open('https://wa.me/916359784774?text='+msg);
+">
+<input name="name" placeholder="Full Name" required>
+<input name="phone" placeholder="Phone Number">
+<button>Send via WhatsApp</button>
+</form>
+</section>
+
+<section id="management" class="reveal">
+<h2>Management</h2>
+<div class="managers">
+
+<div class="manager">
+<h3>Haidara Al Hassan</h3>
+<p>+91 6359784774</p>
+<a class="whatsapp-btn" href="https://wa.me/916359784774">WhatsApp</a>
+</div>
+
+<div class="manager">
+<h3>Homam Antar</h3>
+<p>+91 8758050995</p>
+<a class="whatsapp-btn" href="https://wa.me/918758050995">WhatsApp</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2025 HaMo Global Admissions
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.reveal').forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
