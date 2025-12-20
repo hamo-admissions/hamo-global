@@ -174,13 +174,12 @@ HaMo Global Admissions specializes in university admissions, travel and student 
       'New Application%0A' +
       'Name: ' + this.name.value + '%0A' +`
       'Phone: ' + this.phone.value + '%0A' +
-      'Email: ' + this.email.value; + '%0A' +
-      'Tell us about you:'+ this.text.value;
-    window.open('https://wa.me/916359784774?text=' + 916359716593 encodeURIComponent(msg)); ">
+      'Email: ' + this.email.value;
+    window.open('https://wa.me/916359784774?text=' + encodeURIComponent(msg));
+  ">
     <input name="name" placeholder="Full Name" required>
     <input name="phone" placeholder="Phone Number">
     <input name="email" placeholder="Your Email" required>
-    <input type="text" placeholder=" tell us about you " required>
     <button type='submit'>Send via WhatsApp</button>
   </form>
 </section>
@@ -220,4 +219,3 @@ window.addEventListener('scroll',()=>{
 
 </body>
 </html>
-
